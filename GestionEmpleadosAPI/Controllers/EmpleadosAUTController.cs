@@ -22,6 +22,7 @@ namespace GestionEmpleadosAPI.Controllers
         }
 
         // GET: api/EmpleadosAUT
+        //Consultar Todos los Empleados
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Empleado>>> GetEmpleados()
         {
@@ -29,6 +30,7 @@ namespace GestionEmpleadosAPI.Controllers
         }
 
         // GET: api/EmpleadosAUT/5
+        //Consultar un empleado
         [HttpGet("{id}")]
         public async Task<ActionResult<Empleado>> GetEmpleado(int id)
         {
@@ -44,6 +46,7 @@ namespace GestionEmpleadosAPI.Controllers
 
         // PUT: api/EmpleadosAUT/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        //Actualizar un empleado
         [HttpPut("{id}")]
         public async Task<IActionResult> PutEmpleado(int id, Empleado empleado)
         {
@@ -75,6 +78,7 @@ namespace GestionEmpleadosAPI.Controllers
 
         // POST: api/EmpleadosAUT
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        //Crear un empleado
         [HttpPost]
         public async Task<ActionResult<Empleado>> PostEmpleado(Empleado empleado)
         {
@@ -85,6 +89,7 @@ namespace GestionEmpleadosAPI.Controllers
         }
 
         // DELETE: api/EmpleadosAUT/5
+        //Eliminar un empleado
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteEmpleado(int id)
         {
@@ -99,7 +104,7 @@ namespace GestionEmpleadosAPI.Controllers
 
             return NoContent();
         }
-
+        //Validar si existe un empleado
         private bool EmpleadoExists(int id)
         {
             return _context.Empleados.Any(e => e.Id == id);
