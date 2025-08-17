@@ -102,7 +102,7 @@ namespace GestionEmpleadosAPI.Controllers
             _context.Empleados.Remove(empleado);
             await _context.SaveChangesAsync();
 
-            return NoContent();
+            return NoContent();//El estandar de REST indica que al eliminar un recurso se debe retornar NoContent (204)
         }
         //Validar si existe un empleado
         private bool EmpleadoExists(int id)
